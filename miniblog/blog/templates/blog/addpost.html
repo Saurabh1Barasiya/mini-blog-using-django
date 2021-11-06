@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<form action="" method="post">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" class="btn btn-primary" value="Add">
+</form>
+{% endblock content %}
+
+{% block msg %}
+{% if messages %}
+    {% for message in messages %}
+        <h3>{{message}}</h3>
+    {% endfor %}
+{% endif %}
+{% endblock msg %}  

@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% comment %} <h2>home page.</h2> {% endcomment %}
+<div class="container mt-2">
+{% if posts %}
+
+{% comment %} Add jambotrom and get all the data {% endcomment %}
+{% for post in posts %}
+<div class="jumbotron jumbotron-fluid bg-dark">
+  <div class="container">
+    <h1 class="display-4 text-white">{{post.title}}</h1>
+    <p class="lead text-white">{{post.desc}}</p>
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+{% endblock %}
+
